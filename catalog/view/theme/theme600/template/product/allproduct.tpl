@@ -54,10 +54,13 @@
         </div>
       </div>
       <br />
-
+        <?php foreach ($products as $cat_Name => $products_cat):;?>
+        <div class="row">
+            <h1><?=$cat_Name?></h1>
+        </div>
       <div class="row">
-          <?php foreach ($products as $cat_Name => $products_cat):;?>
-              <h1><?=$cat_Name?></h1>
+
+
         <?php foreach ($products_cat as $product) { ?>
           <div class="product-layout product-list col-xs-12">
               <div class="product-thumb">
@@ -116,8 +119,9 @@
               </div>
             </div>
         <?php } ?>
-          <?php endforeach; ?>
+
           </div>
+        <?php endforeach; ?>
 
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
