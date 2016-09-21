@@ -1,0 +1,105 @@
+.box.newsletter {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.box.newsletter:before, .box.newsletter:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.box.newsletter:after {
+  clear: both;
+}
+.box.newsletter .box-heading {
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.content_bottom .box.newsletter, .box.newsletter .box-heading, .box.newsletter .box-content, .box.newsletter .tm-login-form, .box.newsletter .dropdown-btn {
+  float: left;
+}
+.box.newsletter .box-content {
+  position: relative;
+}
+.box.newsletter .box-heading h3 {
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.box.newsletter .dropdown-btn {
+  background: #d6d6d6;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+}
+.box.newsletter .dropdown-btn i {
+  font-size: 26px;
+  line-height: 50px;
+}
+.box.newsletter .dropdown-btn:hover {
+  background: #158423;
+  color: #fff;
+}
+.box.newsletter .control-label {
+  display: none;
+}
+.box.newsletter .form-control {
+  width: 285px;
+  height: 50px;
+  border: 1px solid #d6d6d6;
+  padding-right: 60px;
+}
+
+.newsletter-error, .newsletter-success {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 20px;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+}
+
+.newsletter-error {
+  color: #D4323D;
+}
+
+.newsletter-success {
+  color: #55C65E;
+}
+
+@media (max-width: 991px) {
+  .box.newsletter {
+    margin-bottom: 30px;
+  }
+  .content_bottom .box.newsletter, .box.newsletter .box-heading, .box.newsletter .box-content, .box.newsletter .tm-login-form, .box.newsletter .dropdown-btn {
+    float: none;
+  }
+  .box.newsletter .box-heading {
+    margin-right: 0;
+  }
+  .box.newsletter .form-control {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .box.newsletter {
+    margin-bottom: 30px;
+  }
+  .content_bottom .box.newsletter, .box.newsletter .box-heading, .box.newsletter .box-content, .box.newsletter .tm-login-form, .box.newsletter .dropdown-btn {
+    float: none;
+  }
+  .box.newsletter .box-heading {
+    margin-right: 0;
+  }
+  .box.newsletter .form-control {
+    width: 100%;
+  }
+}

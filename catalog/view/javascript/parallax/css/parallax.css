@@ -1,0 +1,97 @@
+.parallax h2, .parallax h3, .parallax h4, .parallax p {
+  margin: 0;
+}
+.parallax .box {
+  margin-top: 0;
+}
+.parallax * + p {
+  margin-top: 14px;
+}
+.parallax * + .btn {
+  margin-top: 20px;
+}
+.parallax * + time,
+.parallax * + time + span {
+  margin-top: 20px;
+}
+.parallax time + span {
+  margin-left: 17px;
+}
+
+.parallax, .parallax h2, .parallax h3, .parallax h4 {
+  color: #fff;
+}
+.parallax h2 {
+  font-size: 68px;
+  line-height: 66px;
+  font-weight: 700;
+}
+.parallax h2 span {
+  font-weight: 100;
+  display: block;
+}
+.parallax h3 {
+  font-size: 58px;
+  line-height: 66px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.parallax h4 {
+  font-size: 31px;
+  line-height: 37px;
+  font-weight: 300;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.parallax .btn {
+  padding: 20px 34px;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 500;
+}
+.parallax > div {
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax > div.link {
+  cursor: pointer;
+}
+.parallax > .parallax-1 {
+  text-align: center;
+  padding: 5.4% 0 6.2%;
+}
+.parallax > .parallax-2 {
+  padding: 4.3% 0px 5.4%;
+}
+.parallax > .parallax-3 {
+  padding: 4.4% 0 5.4%;
+}
+.parallax > .parallax-3 .box time, .parallax > .parallax-3 .box span {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.parallax > .parallax-3 .box time:before, .parallax > .parallax-3 .box span:before {
+  font-family: "FontAwesome";
+  margin-right: 11px;
+}
+.parallax p {
+  position: relative;
+  display: block;
+}
+
+@media (max-width: 479px) {
+  .parallax h2 {
+    font-size: 47px;
+    line-height: 46px;
+  }
+  .parallax h3 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
