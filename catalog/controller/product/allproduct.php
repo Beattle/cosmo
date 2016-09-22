@@ -129,6 +129,7 @@ class ControllerProductAllproduct extends Controller {
             );
             $results =  $this->model_catalog_product->getProducts($filter_data);
             $category = $this->model_catalog_category->getCategory($category_id);
+            $category['href'] = $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $category_id . $url);
 
             foreach ($results as $result) {
                 if ($result['image']) {
@@ -163,7 +164,9 @@ class ControllerProductAllproduct extends Controller {
 
 
 
-                $data['products'][$category['name']][] = array(
+
+
+                $category['prods'][] = array(
                     'product_id'  => $result['product_id'],
                     'thumb'       => $image,
 
@@ -178,7 +181,9 @@ class ControllerProductAllproduct extends Controller {
                     'rating'      => $result['rating'],
                     'href'        => $this->url->link('product/product', '&product_id=' . $result['product_id'] . $url)
                 );
+
             }
+            $data['products'][] = $category;
         }
 
         $filter_data = array(

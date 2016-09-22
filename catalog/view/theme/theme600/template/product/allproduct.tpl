@@ -54,14 +54,16 @@
         </div>
       </div>
       <br />
-        <?php foreach ($products as $cat_Name => $products_cat):;?>
+        <?php foreach ($products as $key => $cat):;?>
         <div class="row">
-            <h1><?=$cat_Name?></h1>
+            <h1><a href="<?php echo $cat['href'];?>">
+                    <span><?php echo $cat['name'];?></span>
+                </a></h1>
         </div>
       <div class="row">
 
 
-        <?php foreach ($products_cat as $product) { ?>
+        <?php foreach ($cat['prods'] as $product) { ?>
           <div class="product-layout product-list col-xs-12">
               <div class="product-thumb">
                   <div class="image">
@@ -123,10 +125,10 @@
           </div>
         <?php endforeach; ?>
 
-      <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <div class="col-sm-6 text-right"><?php echo $results; ?></div>
-      </div>
+      <!--<div class="row">
+        <div class="col-sm-6 text-left"><?php // echo $pagination; ?></div>
+        <div class="col-sm-6 text-right"><?php // echo $results; ?></div>
+      </div>-->
       <?php } ?>
       <?php if (!$products) { ?>
       <p><?php echo $text_empty; ?></p>
