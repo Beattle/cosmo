@@ -471,18 +471,18 @@ $(window).resize(function () {
 
 /* Cart-Button Toggle
 ========================================================*/
-;
+
 (function ($) {
     var container = $(".product-thumb");
     $(document).ready(function(){
-     $('.cart-button').find('.toggle_btn').on("click", function(){
+/*     $('.cart-button').find('.toggle_btn').on("click", function(){
         if ($(this).closest('.product-thumb').hasClass('open')){
             $(this).closest('.product-thumb').removeClass('open');
         }
         else {
             $(this).closest('.product-thumb').addClass('open');
         }
-    }); 
+    }); */
  });
     $(document).click(function(e) {
         if (!container.is(e.target) && container.has(e.target).length === 0 && container.hasClass('open')) {

@@ -1,5 +1,5 @@
 <div class="box category">
-	<div class="box-heading"><h3><?php echo $heading_title; ?></h3></div>
+	<div class="box-heading"><h3><?php echo 'Каталог'; ?></h3></div>
 	<div class="box-content">
 		<div class="box-category">
 		<?php if ($categories) {  echo $categories; } ?>

@@ -1185,6 +1185,16 @@ td .price, .price b {
   opacity: 1;
 }
 
+.see-others{
+	text-align: center;
+
+}
+
+.see-others a{
+	border-bottom: 1px dashed #000;
+	font-size: 16px;
+}
+
 /* ==================    Product List, Product Grid    =================== */
 .product-list .product-thumb .image {
   float: left;
@@ -1268,7 +1278,7 @@ td .price, .price b {
 }
 
 .price-section .price-new, .price-section .price-old {
-  font-size: 30px;
+  font-size: 45px;
   color: #158423;
   line-height: 30px;
 }
@@ -1493,7 +1503,7 @@ td .price, .price b {
 }
 .box .box-heading {
   margin: 0 0 30px;
-  text-align: center;
+  text-align: left;
 }
 .box .box-heading h3 {
   margin: 0;
@@ -1696,8 +1706,20 @@ button.btn-primary + a.btn-danger {
   color: #000;
   font-size: 28px;
   line-height: 28px;
-  width: 20%;
+  width: 50%;
 }
+
+#product .product-btn{
+	width: 25%;
+	height: 50px;
+	top: 3px;
+	position: relative;
+}
+
+#product .form-group{
+	margin-bottom: 23px;
+}
+
 .product-btn:hover, .product-thumb .quickview:hover {
   color: #158423;
 }
@@ -1707,7 +1729,7 @@ button.btn-primary + a.btn-danger {
   line-height: 40px;
   background-color: #158423;
   color: #fff;
-  width: 60px;
+  width: 128px;
 }
 .product-btn-add:hover {
   background-color: #000;
@@ -1722,7 +1744,8 @@ button.btn-primary + a.btn-danger {
   background-color: #f2f2f2;
   border: 1px solid #d6d6d6;
   cursor: pointer;
-  width: 99px;
+  width: 60px;
+	float: right;
   font-size: 18px;
   line-height: 18px;
   font-weight: 400;
@@ -1774,7 +1797,7 @@ button.btn-primary + a.btn-danger {
 }
 
 .product_page #button-cart {
-  width: 100%;
+  width: 70%;
   font-size: 20px;
   line-height: 20px;
   height: 50px;
@@ -2278,6 +2301,11 @@ button.btn-primary + a.btn-danger {
   padding: 0 10%;
 }
 
+
+.box-category ul > li > a{
+	font-size: 18px;
+	font-weight: bold;
+}
 /*========================================================
                Responsive HTML boxes
 =========================================================*/
@@ -2419,6 +2447,10 @@ button.btn-primary + a.btn-danger {
   .breadcrumb > li a {
     line-height: 24px;
   }
+}
+
+.options-view{
+	display: none;
 }
 #list-view,
 #grid-view {
@@ -2576,9 +2608,39 @@ button.btn-primary + a.btn-danger {
 
 .general_info .product-section,
 .general_info .price-section {
-  margin: 0 0 5px;
-  padding-bottom: 10px;
+  margin: 0 0 10px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #d6d6d6;
+}
+
+#product .form-group.form-horizontal{
+	margin-top: 25px;
+}
+
+.control-label{
+	font-size: 18px;
+}
+
+#input-quantity{
+	font-size: 16px;
+}
+
+
+.product-section li{
+	font-size: 17px;
+}
+
+.product-section li a, .product-section li span{
+	font-weight: bold;
+}
+
+.rating-section{
+	margin-bottom: 15px;
+}
+
+.product-info h3{
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 #full_gallery {

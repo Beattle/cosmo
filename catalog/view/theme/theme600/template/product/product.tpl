@@ -108,6 +108,15 @@
 						<div class="general_info product-info">
 
 							<h1 class="product-title"><?php echo $heading_title; ?></h1>
+                            <?php if ($attribute_groups) { ?>
+                            <!-- Product specifications -->
+
+                            <?php foreach ($attribute_groups[0]['attribute'] as $attribute) { ?>
+                            <?php echo $attribute['name']; ?>:
+                            <span><?php echo $attribute['text']; ?></span>
+                            <?php } ?>
+                            <?php } ?>
+
 
 							<!-- Prodyuct rating status -->
 							<div class="rating-section product-rating-status">
@@ -150,16 +159,30 @@
 								</div>
 							</div>
 							<?php } ?>
-
+                            <h3>Характеристики</h3>
 							<ul class="list-unstyled product-section">
-								<?php if ($manufacturer) { ?>
-								<li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
-								<?php } ?>
-								<li><?php echo $text_model; ?> <span><?php echo $model; ?></span></li>
+                                <?php if ($manufacturer) { ?>
+                                    <li><?php echo 'Бренд' ?>: <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
+                                <?php } ?>
+                                <?php if ($attribute_groups) { ?>
+                                    <!-- Product specifications -->
+
+                                        <?php foreach ($attribute_groups[1]['attribute'] as $attribute) { ?>
+                                            <li><?php echo $attribute['name']; ?>:
+                                                <span><?php echo $attribute['text']; ?></span>
+                                            </li>
+                                        <?php } ?>
+
+
+
+                                <?php } ?>
+
+								<!--<li><?php /*echo $text_model; */?> <span><?php /*echo $model; */?></span></li>-->
 								<?php if ($reward) { ?>
 								<li><?php echo $text_reward; ?> <span><?php echo $reward; ?></span></li>
 								<?php } ?>
 								<li><?php echo $text_stock; ?> <span><?php echo $stock; ?></span></li>
+
 							</ul>
 						</div>
 
@@ -340,12 +363,13 @@
 
 										<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
 										<button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="product-btn-add"><?php echo $button_cart; ?></button>
+                                        <button class="product-btn" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i> </button>
 									</div>
 
-									<ul class="product-buttons">
-										<li><button class="product-btn" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i> </button></li>
-										<li><button type="button" class="product-btn" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button></li>
-									</ul>					
+<!--									<ul class="product-buttons">
+										<li><button class="product-btn" onclick="wishlist.add('<?php /*echo $product_id; */?>');"><i class="fa fa-heart"></i> </button></li>
+										<li><button type="button" class="product-btn" onclick="compare.add('<?php /*echo $product_id; */?>');"><i class="fa fa-exchange"></i></button></li>
+									</ul>-->
 
 									<?php if ($tags) { ?>
 									<!-- Product tags -->
@@ -381,30 +405,8 @@
 							<?php echo $description; ?>
 							<div class="clearfix"></div>
 						</div>
+<!--
 
-						<?php if ($attribute_groups) { ?>
-						<!-- Product specifications -->
-						<div id="tab-specification" class="product-spec product-section">
-							<h3 class="product-section_title"><?php echo $tab_attribute; ?></h3>
-							<table class="table table-bordered">
-								<?php foreach ($attribute_groups as $attribute_group) { ?>
-								<tbody>
-									<tr>
-										<th colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></th>
-									</tr>
-								</tbody>
-								<tbody>
-									<?php foreach ($attribute_group['attribute'] as $attribute) { ?>
-									<tr>
-										<td><?php echo $attribute['name']; ?></td>
-										<td><?php echo $attribute['text']; ?></td>
-									</tr>
-									<?php } ?>
-								</tbody>
-								<?php } ?>
-							</table>
-						</div>
-						<?php } ?>
 
 						<!-- Product reviews -->
 						<?php if ($review_status) { ?>			
@@ -495,6 +497,7 @@
 										</div>
 										<div class="caption">
 											<!-- price -->
+                                            <div class="description"><?php echo $product['name']; ?></div>
 											<?php if ($product['price']) { ?>
 											<p class="price">
 												<?php if (!$product['special']) { ?>
@@ -507,8 +510,8 @@
 												<?php } ?>
 											</p>
 											<?php } ?>
-											<div class="name"><?php echo $product['name']; ?></div>
-											<div class="description"><a href="<?php echo $product['href']; ?>"><?php echo $product['description']; ?></a></div>
+
+											<div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['description']; ?></a></div>
 
 											<!-- Rating -->
 											<?php if ($product['rating']) { ?>
@@ -529,9 +532,9 @@
 													
 													<i class="fa fa-shopping-cart"></i> 
 												</button>
-												<a class="toggle_btn">More</a>
+												<a class="toggle_btn"><button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button></a>
 												<div class="toggle_cnt">
-													<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
+
 													<button class="product-btn" type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
 												</div>
 											</div>

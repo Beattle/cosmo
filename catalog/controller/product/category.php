@@ -181,7 +181,6 @@ class ControllerProductCategory extends Controller {
 			$results = $this->model_catalog_product->getProducts($filter_data);
 
 			foreach ($results as $result) {
-			    echo '<pre>'.print_r($result,true).'</pre>';
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {
