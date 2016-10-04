@@ -23,6 +23,9 @@
         <li><a href="<?php echo $password; ?>"><?php echo $text_password; ?></a></li>
         <li><a href="<?php echo $address; ?>"><?php echo $text_address; ?></a></li>
         <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
+        <li><a class="sf-with-ul" href="http://shop.oc-project.ru/cosmo/video"><span class="v-align">Полезные видео</span></a>
+        <li><a href="<?php echo $base;?>partprog">Партнёрская программа</a></li>
+          <li><a href="<?php echo $base; ?>dostavka ">Доставка</a></li>
       </ul>
       <h2><?php echo $text_my_orders; ?></h2>
       <ul class="list-unstyled">
@@ -31,9 +34,9 @@
         <?php if ($reward) { ?>
         <li><a href="<?php echo $reward; ?>"><?php echo $text_reward; ?></a></li>
         <?php } ?>
-        <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-        <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
-        <li><a href="<?php echo $recurring; ?>"><?php echo $text_recurring; ?></a></li>
+<!--        <li><a href="<?php /*echo $return; */?>"><?php /*echo $text_return; */?></a></li>
+        <li><a href="<?php /*echo $transaction; */?>"><?php /*echo $text_transaction; */?></a></li>
+        <li><a href="<?php /*echo $recurring; */?>"><?php /*echo $text_recurring; */?></a></li>-->
       </ul>
       <h2><?php echo $text_my_newsletter; ?></h2>
       <ul class="list-unstyled">

@@ -135,6 +135,22 @@ $(document).ready(function() {
 	$(document).ajaxStop(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
+    
+        var tl = $(".trainingList");
+
+        tl.find(".training.slide").on({
+            click: function () {
+                var $this = $(this);
+                $this.children(".info").slideToggle(500);
+                var rot = $this.find(".arr span");
+                if (rot.hasClass("rotate")) {
+                    rot.removeClass("rotate");
+                } else {
+                    rot.addClass("rotate");
+                }
+            }
+        });
+
 });
 
 // Cart add remove functions

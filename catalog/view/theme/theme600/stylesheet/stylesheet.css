@@ -1367,13 +1367,15 @@ td .price, .price b {
   margin-top: 15px;
 }
 
-.quickview_description iframe,
+/*.quickview_description iframe,
 .product-desc iframe {
   width: 40% !important;
   height: 200px !important;
   float: left;
   margin-right: 2em;
-}
+}*/
+
+
 
 .quickview-style .inf {
   font-size: 14px;
@@ -1984,6 +1986,7 @@ button.btn-primary + a.btn-danger {
 .nav__primary .menu > li {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
+	height: 70px;
 }
 .nav__primary .menu > li.sfHover > ul {
   display: table !important;
@@ -1995,13 +1998,26 @@ button.btn-primary + a.btn-danger {
   border-left: none;
 }
 .nav__primary .menu > li > a {
-  padding: 8% 18% 0;
+  padding: 0 18% 0;
   text-align: center;
-  height: 70px;
+
   color: #fff;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 14px;
+	line-height: 1.4;
   font-weight: 400;
+}
+
+.nav__primary .menu >li .v-align{
+	display: inline-block;
+	vertical-align: middle;
+	height:100%;
+}
+
+.nav__primary .menu >li .v-align:after{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height:100%;
 }
 
 /*================ Sub-menu lvl1  ===============*/
@@ -3147,6 +3163,10 @@ footer dl:first-child dd:before {
   font-family: "FontAwesome";
 }
 
+footer .fa-phone a{
+	font-size: 29px;
+}
+
 .copyright br {
   display: none;
 }
@@ -3216,6 +3236,59 @@ footer dl:first-child dd:before {
 
 .toTop:visited, .toTop:focus, .toTop:active {
   color: #fff;
+}
+
+.trainingList {
+	color: #000000;
+	font-family: Roboto,serif;
+	font-weight: normal;
+	margin: 39px 0;
+	width: 100%;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+#content .trainingList .row.tbl_header{
+	background-color: #e9f1f4;
+	color: #62777f;
+	font-weight: bold;
+}
+
+
+.trainingList .row.tbl_header, .trainingList .row.training {
+	margin: 0;
+	padding: 26px;
+}
+
+.hidden-md-up {
+	display: none !important;
+}
+.hidden-sm-up {
+	display: none !important;
+}
+
+.trainingList .row.training .info {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #dedede -moz-use-text-color;
+	border-image: none;
+	border-style: solid none;
+	border-width: 1px 0;
+	display: none;
+	padding-top: 26px;
+}
+.trainingList .row.training.slide {
+	cursor: pointer;
+}
+
+.trainingList .row.training {
+	font-weight: normal;
+}
+
+.trainingList .row.training:nth-child(2n+2) {
+	background-color: #f4f4f4;
 }
 
 @media only screen and (max-width: 1399px) {
@@ -3289,3 +3362,5 @@ footer dl:first-child dd:before {
     padding: 6px;
   }
 }
+
+

@@ -167,11 +167,11 @@
                 <?php echo $currency; ?>
                 <nav id="top-links" class="nav">
                     <ul class="list-inline">
-                        <li class="first">
-                            <a href="<?php echo $home; ?>"><i
-                                    class="fa fa-home"></i><span><?php echo $text_home; ?></span>
+<!--                        <li class="first">
+                            <a href="<?php /*echo $home; */?>"><i
+                                    class="fa fa-home"></i><span><?php /*echo $text_home; */?></span>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="dropdown">
                             <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"
                                class="dropdown-toggle"
@@ -186,9 +186,9 @@
                                     <li>
                                         <a href="<?php echo $order; ?>"><?php echo $text_order; ?></a>
                                     </li>
-                                    <li>
-                                        <a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a>
-                                    </li>
+<!--                                    <li>
+                                        <a href="<?php /*echo $transaction; */?>"><?php /*echo $text_transaction; */?></a>
+                                    </li>-->
                                     <li>
                                         <a href="<?php echo $download; ?>"><?php echo $text_download; ?></a>
                                     </li>
@@ -215,10 +215,10 @@
                                     class="fa fa-shopping-cart"></i> <span><?php echo $text_shopping_cart; ?></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i
-                                    class="fa fa-share"></i> <span><?php echo $text_checkout; ?></span></a>
-                        </li>
+<!--                        <li>
+                            <a href="<?php /*echo $checkout; */?>" title="<?php /*echo $text_checkout; */?>"><i
+                                    class="fa fa-share"></i> <span><?php /*echo $text_checkout; */?></span></a>
+                        </li>-->
                     </ul>
                 </nav>
             </div>    
@@ -254,14 +254,50 @@
                 <div id="stuck" class="stuck-menu">
                     <div id="tm_menu" class="nav__primary">
                         <div class="container">
-                            <?php if ($categories_tm) {
-                                echo $categories_tm;
-                            } ?>
+                            <ul class="menu">
+                            <?php foreach($headermenu as $header){?>
+                                <li class=""><a class="sf-with-ul" href="<?php echo $header['link'] ?>"><span class="v-align"><?php echo $header['title']; ?></span></a>
+                                    <?php if($header['sub_title']){?>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-inner">
+                                                <ul class="list-unstyled">
+                                                    <?php foreach($header['sub_title'] as $subtitle){ ?>
+                                                        <li>
+                                                            <?php if(isset($subtitle['href'])){?>
+                                                                <a href="<?php echo $subtitle['href']; ?>"><?php echo $subtitle['title']; ?></a>
+                                                            <?php }else{?>
+                                                                <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
+                                                            <?php } ?>
+                                                            <?php if($header['sub_title']){?>
+
+                                                                <ul>
+                                                                    <?php foreach($subtitle['sub_title'] as $subtitle){ ?>
+                                                                        <li>
+                                                                            <?php if(isset($subtitle['href'])){?>
+                                                                                <a href="<?php echo $subtitle['href']; ?>"><?php echo $subtitle['title']; ?></a>
+                                                                            <?php }else{?>
+                                                                                <a href="<?php echo $subtitle['link']?>"><?php echo $subtitle['title']; ?></a>
+                                                                            <?php } ?>
+                                                                        </li>
+                                                                    <?php }?>
+
+                                                                </ul>
+                                                            <?php }?>
+                                                        </li>
+                                                    <?php }?>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    <?php }?>
+                                </li>
+                            <?php  }?>
+                            </ul>
                             <div class="clear"></div>
                         </div>
                     </div>
                 </div>
-            <?php } ?>    
+            <?php } ?>
         </div>
             
     </header>

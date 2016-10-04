@@ -103,6 +103,7 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
+        $data['client_group'] = $this->customer->getGroupId();
  
 			$data['sitemap'] = $this->url->link('information/sitemap');
 			$data['special'] = $this->url->link('product/special');
@@ -141,6 +142,9 @@ class ControllerCommonHeader extends Controller {
 
 		$categories = $this->model_catalog_category->getCategories(0);
 
+$data['headermenus'] = array();
+		$this->load->model('catalog/headermenu');
+		$data['headermenu'] =$this->model_catalog_headermenu->getHeadermenu();
 		foreach ($categories as $category) {
 			if ($category['top']) {
 				// Level 2
@@ -170,6 +174,44 @@ class ControllerCommonHeader extends Controller {
 			}
 		}
 
+
+      	$this->load->model('newsblog/category');
+        $this->load->model('newsblog/article');
+
+		$data['newsblog_categories'] = array();
+
+		$categories = $this->model_newsblog_category->getCategories(0);
+
+$data['headermenus'] = array();
+		$this->load->model('catalog/headermenu');
+		$data['headermenu'] =$this->model_catalog_headermenu->getHeadermenu();
+		foreach ($categories as $category) {
+			if ($category['settings']) {
+				$settings=unserialize($category['settings']);
+				if ($settings['show_in_top']==0) continue;
+			}
+
+			$articles = array();
+
+			if ($category['settings'] && $settings['show_in_top_articles']) {
+				$filter=array('filter_category_id'=>$category['category_id'],'filter_sub_category'=>true);
+				$results = $this->model_newsblog_article->getArticles($filter);
+
+				foreach ($results as $result) {
+					$articles[] = array(
+						'name'        => $result['name'],
+						'href'        => $this->url->link('newsblog/article', 'newsblog_path=' . $category['category_id'] . '&newsblog_article_id=' . $result['article_id'])
+					);
+				}
+            }
+			$data['categories'][] = array(
+				'name'     => $category['name'],
+				'children' => $articles,
+				'column'   => 1,
+				'href'     => $this->url->link('newsblog/category', 'newsblog_path=' . $category['category_id'])
+			);
+		}
+		
 
 			$this->load->model('design/topmenu');
 			$data['categories_tm'] = $this->model_design_topmenu->getMenu();

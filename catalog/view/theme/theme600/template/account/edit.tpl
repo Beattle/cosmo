@@ -246,6 +246,7 @@ $('.form-group[data-sort]').detach().each(function() {
 <script type="text/javascript"><!--
 $('button[id^=\'button-custom-field\']').on('click', function() {
 	var node = this;
+    var client_data = {};
 	
 	$('#form-upload').remove();
 	
@@ -280,8 +281,12 @@ $('button[id^=\'button-custom-field\']').on('click', function() {
 								
 					if (json['success']) {
 						alert(json['success']);
-						
+
+						client_data['name'] = $('#input-firstname').val();
+                        client_data['last_name'] = $('#input-lastname').val();
+                        sendMail(client_data);
 						$(node).parent().find('input').attr('value', json['code']);
+
 					}
 				},			
 				error: function(xhr, ajaxOptions, thrownError) {
@@ -305,5 +310,29 @@ $('.datetime').datetimepicker({
 $('.time').datetimepicker({
 	pickDate: false
 });
+
+    function sendMail(data) {
+        $.ajax({
+            url:'index.php?route=account/edit/sendFile',
+            type: 'post',
+            dataType: 'json',
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function() {
+
+            },
+            complete: function() {
+
+            },
+            success:function () {
+                
+            },
+            error:function () {
+                
+            }
+        })
+    }
 //--></script> 
 <?php echo $footer; ?>

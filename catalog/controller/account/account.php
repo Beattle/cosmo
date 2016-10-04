@@ -7,6 +7,14 @@ class ControllerAccountAccount extends Controller {
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
+        if ($this->request->server['HTTPS']) {
+            $server = $this->config->get('config_ssl');
+        } else {
+            $server = $this->config->get('config_url');
+        }
+
+        $data['base'] = $server;
+
 		$this->load->language('account/account');
 
 		$this->document->setTitle($this->language->get('heading_title'));
