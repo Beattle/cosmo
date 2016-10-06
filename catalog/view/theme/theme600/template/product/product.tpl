@@ -112,8 +112,7 @@
                             <!-- Product specifications -->
 
                             <?php foreach ($attribute_groups[0]['attribute'] as $attribute) { ?>
-                            <?php echo $attribute['name']; ?>:
-                            <span><?php echo $attribute['text']; ?></span>
+                            <span class="our-analog"><?php echo $attribute['text']; ?></span>
                             <?php } ?>
                             <?php } ?>
 

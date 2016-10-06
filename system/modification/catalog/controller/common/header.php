@@ -103,7 +103,6 @@ class ControllerCommonHeader extends Controller {
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
-        $data['client_group'] = $this->customer->getGroupId();
  
 			$data['sitemap'] = $this->url->link('information/sitemap');
 			$data['special'] = $this->url->link('product/special');

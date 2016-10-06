@@ -3296,6 +3296,31 @@ footer .fa-phone a{
     display: none !important;
   }
 }
+
+.our-analog{
+	font-size: 33px;
+	font-weight: 500;
+	color: #333;
+}
+
+.rotate {
+
+	/* Safari */
+	-webkit-transform: rotate(-180deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-180deg);
+
+	/* IE */
+	-ms-transform: rotate(-180deg);
+
+	/* Opera */
+	-o-transform: rotate(-180deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6);
+
+}
 /*========================================================
                   Responsive Styles
 =========================================================*/

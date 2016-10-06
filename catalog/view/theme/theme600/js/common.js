@@ -142,7 +142,8 @@ $(document).ready(function() {
             click: function () {
                 var $this = $(this);
                 $this.children(".info").slideToggle(500);
-                var rot = $this.find(".arr span");
+                var rot = $this.find("span.glyphicon");
+
                 if (rot.hasClass("rotate")) {
                     rot.removeClass("rotate");
                 } else {

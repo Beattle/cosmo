@@ -132,8 +132,7 @@ class ControllerProductAllproduct extends Controller {
 
 
 
-            $category['href'] = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $category_id . $url);
-                $category['cat_desc'] = html_entity_decode($category['description'], ENT_QUOTES, 'UTF-8');
+            $category['href'] = $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $category_id . $url);
 
 
             foreach ($results as $result) {
@@ -174,6 +173,10 @@ class ControllerProductAllproduct extends Controller {
                 $category['prods'][] = array(
                     'product_id'  => $result['product_id'],
                     'thumb'       => $image,
+ 
+				'img-width'       => $this->config->get('config_image_product_width'),
+				'img-height'       => $this->config->get('config_image_product_height'),
+				
 
                     'img-width'       => $this->config->get('config_image_product_width'),
                     'img-height'       => $this->config->get('config_image_product_height'),
@@ -189,7 +192,6 @@ class ControllerProductAllproduct extends Controller {
 
             }
             $data['products'][] = $category;
-
         }
 
         $filter_data = array(
