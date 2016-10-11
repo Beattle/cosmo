@@ -10,11 +10,14 @@
     <?php $class = 'col-sm-6 2'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
     <?php $class = 'col-sm-9'; ?>
+    <?php } elseif ($article_id == '8'){?>
+    <?php $class = 'col-sm-11 col-sm-offset-1';?>
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-        <h1><?php echo $heading_title; ?></h1>
+    <div id="content" class="<?php echo $class; ?> <?php echo "article_id-$article_id";?>">
+        <?php echo $content_top; ?>
+        <h1 class="article_id-<?php echo $article_id; ?> "><?php echo $heading_title; ?></h1>
         <?=$preview;?>
       <div class="row">
         <?php if ($column_left || $column_right) { ?>
@@ -96,6 +99,32 @@
       <?php } ?>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
+</div>
+
+<div class="fb-form-cont">
+    <form data-callback="doSomething" class="fancybox" action="javascript:void(0)" id="fb-form" method="post">
+        <fieldset>
+            <legend>Записаться на обучение</legend>
+            <div class="form-group">
+                <label for="fb-field_1"> Как к вам обращаться</label>
+                <input class="form-control" required name="name" type="text" id="fb-field_1"/>
+            </div>
+            <div class="form-group">
+                <label for="fb-field_2">Телефон</label>
+                <input class="form-control" required name="phone" type="text" id="fb-field_2"/>
+            </div>
+            <div class="form-group">
+                <label for="fb-field_3">Email</label>
+                <input class="form-control" required="true" name="email" type="text" id="fb-field_3"/>
+            </div>
+            <div class="form-group clearfix">
+                <label for="fb-field_4">Комментарий</label>
+                <textarea class="form-control" name="enquiry" id="fb-field_4"></textarea>
+            </div>
+            <div data-callback="recaptchaCallback" class="g-recaptcha  form-group" data-sitekey="6Lcq2ggUAAAAAPIf0L3l0-ApMoRxEVWrNX2CxOWV"></div>
+        </fieldset>
+        <button disabled class="btn sendBtn"> Отправить</button>
+    </form>
 </div>
 
 <script type="text/javascript"><!--

@@ -174,10 +174,10 @@ include('js/jquery.easing.1.3.js');
 
 /* FancyBox
 ========================================================*/
-;
+
 (function ($) {
     var o = $('.quickview');
-    var o2 = $('#default_gallery');
+    var o2 = $('#default_gallery, #fb-form');
     if (o.length > 0 || o2.length > 0) {
         include('js/fancybox/jquery.fancybox.js');
     }
@@ -490,3 +490,45 @@ $(window).resize(function () {
         }
     })
 })(jQuery);
+
+jQuery(document).ready(function($) {
+    var btn = $('button[data-target=#addLearning]');
+
+    btn.click(function (e) {
+        e.preventDefault();
+        $.fancybox.open({
+            content: $('#fb-form')
+        },{
+            afterLoad:function (obj) {
+            }
+        });
+    });
+
+    $('#fb-form').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url:'index.php?route=newsblog/article/sendFb',
+            type:'POST',
+            datatype:'json',
+            cache:'false',
+            data:$(this).serialize(),
+            success:function (json) {
+                alert(json.message);
+                $.fancybox.close();
+            },
+            error:function () {
+                console.log(data);
+            }
+        })
+    });
+
+});
+
+
+
+
+function recaptchaCallback() {
+    $('.sendBtn').removeAttr('disabled');
+}
+
+

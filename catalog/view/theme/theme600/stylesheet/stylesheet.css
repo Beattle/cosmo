@@ -3238,6 +3238,56 @@ footer .fa-phone a{
   color: #fff;
 }
 
+h1.article_id-8{
+	display: none;
+}
+
+/*.fb-form{
+	display: none;
+}*/
+
+#fb-form{
+	width: 350px;
+	margin: 0 auto;
+	display: none;
+}
+
+#fb-form div{
+	position: relative;
+}
+
+#fb-form input::after {
+	color: red;
+	content: "*  ";
+	display: block;
+	height: 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+}
+
+#fb-form input,#fb-form textarea{
+	float:right;
+	width: 200px;
+	margin-right: 10px;
+}
+
+#fb-form input::after{
+	content: "*";
+	color: red;
+}
+
+.g-recaptcha > div{
+	margin: 0 auto;
+}
+
+#fb-form button{
+	margin: 0 auto;
+	display: block;
+	width: 250px;
+}
+
 .trainingList {
 	color: #000000;
 	font-family: Roboto,serif;
@@ -3246,6 +3296,7 @@ footer .fa-phone a{
 	width: 100%;
 	font-size: 13px;
 	line-height: 18px;
+	max-width: 1024px;
 }
 
 #content .trainingList .row.tbl_header{
