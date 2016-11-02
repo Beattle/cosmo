@@ -43,8 +43,8 @@ $(document).ready(function($) {
 						</a>
 					</div>
 				<div class="caption">
-					<div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
-					<!--<div class="description"><?php echo $product['description']; ?></div>-->
+					<div class="description"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+					<div class="name"><?php echo $product['description']; ?></div>
 					<?php if ($product['rating']) { ?>
 					<div class="rating">
 					<?php for ($i = 1; $i <= 5; $i++) { ?>

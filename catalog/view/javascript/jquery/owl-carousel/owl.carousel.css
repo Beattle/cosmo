@@ -23,12 +23,16 @@
 	display: none;
 	position: relative;
 	-webkit-transform: translate3d(0px, 0px, 0px);
-	padding-bottom: 55px;
 }
 .owl-carousel .owl-wrapper-outer{
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	background-color: #f2f2f2;
+	border-left: medium none;
+	font-size: 31px;
+	padding: 58px 0;
+	text-align: center;
 }
 .owl-carousel .owl-wrapper-outer.autoHeight{
 	-webkit-transition: height 500ms ease-in-out;

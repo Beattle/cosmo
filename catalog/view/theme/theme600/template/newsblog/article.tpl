@@ -29,7 +29,7 @@
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
             <?php if ($thumb) { ?>
-            <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+            <!--<li><a class="" href="<?php /*echo $popup; */?>" title="<?php /*echo $heading_title; */?>"><img src="<?php /*echo $thumb; */?>" title="<?php /*echo $heading_title; */?>" alt="<?php /*echo $heading_title; */?>" /></a></li>-->
             <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
@@ -115,7 +115,11 @@
             </div>
             <div class="form-group">
                 <label for="fb-field_3">Email</label>
-                <input class="form-control" required="true" name="email" type="text" id="fb-field_3"/>
+                <input class="form-control" required name="email" type="text" id="fb-field_3"/>
+            </div>
+            <div class="form-group">
+                <label for="fb-field_5">Дата</label>
+                <input class="form-control" required name="data" type="text" id="fb-field_5"/>
             </div>
             <div class="form-group clearfix">
                 <label for="fb-field_4">Комментарий</label>
@@ -127,7 +131,7 @@
     </form>
 </div>
 
-<script type="text/javascript"><!--
+<!--<script type="text/javascript"><!--
 $(document).ready(function() {
 	$('.thumbnails').magnificPopup({
 		type:'image',
@@ -137,5 +141,5 @@ $(document).ready(function() {
 		}
 	});
 });
-//--></script>
+//--></script>-->
 <?php echo $footer; ?>

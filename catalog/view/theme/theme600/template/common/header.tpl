@@ -219,6 +219,12 @@
                             <a href="<?php /*echo $checkout; */?>" title="<?php /*echo $text_checkout; */?>"><i
                                     class="fa fa-share"></i> <span><?php /*echo $text_checkout; */?></span></a>
                         </li>-->
+                        <li>
+                            <a href="tel:8(495)545-59-32"><i class="fa fa-phone"></i><span>8(495)545-59-32</span></a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@amibeauty.ru"><i class="fa fa-envelope"></i><span>info@amibeauty.ru</span></a>
+                        </li>
                     </ul>
                 </nav>
             </div>    

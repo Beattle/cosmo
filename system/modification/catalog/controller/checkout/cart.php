@@ -3,6 +3,8 @@ class ControllerCheckoutCart extends Controller {
 	public function index() {
 		$this->load->language('checkout/cart');
 
+        $this->load->model('catalog/product');
+
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();
@@ -123,6 +125,20 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 
+				$restricted = false;
+				$categories = $this->model_catalog_product->getCategories($product['product_id']);
+                $noDefaultPrice = array(33,31,28,32);
+                $client_group = $this->customer->getGroupId();
+
+                foreach ($categories as $category){
+                    if(in_array($category['category_id'],$noDefaultPrice) && $client_group != 2){
+                        $price = false;
+                        $restricted = true;
+                    }
+                }
+
+                /*echo '<pre>'.print_r($categories,true).'</pre>';*/
+				
 
 
 				// Display prices
@@ -131,6 +147,9 @@ class ControllerCheckoutCart extends Controller {
 				} else {
 					$total = false;
 				}
+				if($restricted){
+				    $total = false;
+                }
 
 				$recurring = '';
 

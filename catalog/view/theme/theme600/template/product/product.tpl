@@ -496,7 +496,11 @@
 										</div>
 										<div class="caption">
 											<!-- price -->
-                                            <div class="description"><?php echo $product['name']; ?></div>
+                                            <div class="description">
+                                                <a href="<?php echo $product['href']; ?>">
+                                                    <?php echo $product['name']; ?>
+                                                </a>
+                                            </div>
 											<?php if ($product['price']) { ?>
 											<p class="price">
 												<?php if (!$product['special']) { ?>

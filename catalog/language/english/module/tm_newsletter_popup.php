@@ -1,15 +1,15 @@
 <?php
 // Heading
-$_['heading_title'] = 'Newsletters';
+$_['heading_title'] = 'Рассылка';
 
 // Entry
-$_['entry_mail'] = 'Enter your e-mail';
+$_['entry_mail'] = 'Введите ваш email';
 
 // Text
-$_['button_subscribe']      = 'Subscribe';
-$_['text_success'] = 'You have successfully subscribed';
+$_['button_subscribe']      = 'Подписаться';
+$_['text_success'] = 'Вы успешно подписались';
 
 //Errors
-$_['error_exist_user'] = 'User already registered';
-$_['error_exist_email'] = 'The specified e-mail already subscribed';
-$_['error_invalid_email'] = 'Please enter a valid e-mail!';
+$_['error_exist_user'] = 'Пользователь уже зарегистрирован';
+$_['error_exist_email'] = 'Такой email уже зарегистрирован';
+$_['error_invalid_email'] = 'Пожалуйста, введите правильный email!';

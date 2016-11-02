@@ -3,16 +3,16 @@
 $_['heading_title'] = 'Tm Module Tabs';
 $_['heading_latest'] = 'Latest';
  
-					$_['heading_latest'] = 'New Arrivals';
+$_['heading_latest'] = 'Новинки';
 				
 $_['heading_specials'] = 'Specials';
 $_['heading_featured'] = 'Featured';
  
-					$_['heading_featured'] = 'Popular';
+$_['heading_featured'] = 'Популярные';
 				
 $_['heading_bestsellers'] = 'Bestsellers';
  
-					$_['heading_bestsellers'] = 'Best Sellers';
+$_['heading_bestsellers'] = 'Хит продаж';
 				
 
 // Text

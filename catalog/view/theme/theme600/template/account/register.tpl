@@ -179,7 +179,7 @@
           </div>
           <?php } ?>
           <?php if ($custom_field['type'] == 'file') { ?>
-          <div id="custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-group custom-field" data-sort="<?php echo $custom_field['sort_order']; ?>">
+          <div id="custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-group custom-field hidden-sm-up" data-sort="<?php echo $custom_field['sort_order']; ?>">
             <label class="col-sm-3 control-label"><?php echo $custom_field['name']; ?></label>
             <div class="col-sm-9">
               <button type="button" id="button-custom-field<?php echo $custom_field['custom_field_id']; ?>" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-default"><i class="fa fa-upload"></i> <?php echo $button_upload; ?></button>

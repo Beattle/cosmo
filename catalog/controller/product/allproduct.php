@@ -148,6 +148,9 @@ class ControllerProductAllproduct extends Controller {
                     $price = false;
                 }
 
+
+
+
                 if ((float)$result['special']) {
                     $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
                 } else {

@@ -144,7 +144,7 @@
 									<?php } ?>
 								</div>
 								<?php } ?>
-								<div class="description "><?php echo $product['name']; ?></div>
+								<div class="description "><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
 								<div class="name name-product"><a href="<?php echo $product['href']; ?>"><?php echo $product['description']; ?></a></div>
 								<?php if ($product['rating']) { ?>
 								<div class="rating">

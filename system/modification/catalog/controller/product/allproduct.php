@@ -148,6 +148,10 @@ class ControllerProductAllproduct extends Controller {
                     $price = false;
                 }
 
+                if($category_id == 33 && $this->customer->getGroupId() != 2){
+                    $price = false;
+                }
+
                 if ((float)$result['special']) {
                     $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
                 } else {

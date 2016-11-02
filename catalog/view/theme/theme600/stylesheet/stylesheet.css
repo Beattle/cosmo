@@ -420,8 +420,8 @@ td .price, .price b {
   display: block;
   padding: 11px 32px;
 }
-.nav a i {
-  display: none;
+.nav a i{
+	margin-right: 10px;
 }
 .nav i {
   font-size: 20px;
@@ -1222,7 +1222,11 @@ td .price, .price b {
     opacity: 1;
   }
   .product-list .product-thumb .caption {
-    padding: 10% 10% 15%;
+    padding: 6% 7%;
+  }
+
+  .product-list .product-thumb .caption h4 a{
+	  font-size: 20px;
   }
 }
 
@@ -1998,11 +2002,11 @@ button.btn-primary + a.btn-danger {
   border-left: none;
 }
 .nav__primary .menu > li > a {
-  padding: 0 18% 0;
+  padding: 0 15% 0;
   text-align: center;
 
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
 	line-height: 1.4;
   font-weight: 400;
 }
@@ -3349,8 +3353,8 @@ h1.article_id-8{
 }
 
 .our-analog{
-	font-size: 33px;
-	font-weight: 500;
+	font-size: 24px;
+	font-weight: 400;
 	color: #333;
 }
 
@@ -3371,6 +3375,45 @@ h1.article_id-8{
 	/* Internet Explorer */
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=6);
 
+}
+
+.container.parallax-2{
+	width: 100%;
+}
+
+.parallax .main-head-p{
+	text-align: center;
+	margin-bottom:56px;
+	margin-top:-35px;
+	font-weight: bold;
+}
+
+.partners{
+	position: relative;
+	top: 50px;
+	z-index: 50;
+}
+
+.partners h2{
+	font-size: 45px;
+}
+
+.owl-controls{
+	display: none!important;
+}
+
+.bpa{
+	margin-top: -26px;
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.partners a{
+	text-decoration: underline;
+}
+
+.ami-club{
+background: url("../image/ris5.png") no-repeat center;
 }
 /*========================================================
                   Responsive Styles

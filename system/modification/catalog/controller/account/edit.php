@@ -217,26 +217,40 @@ class ControllerAccountEdit extends Controller {
 		return !$this->error;
 	}
 
-	public function sendFile($clientData=''){
-        $email_to = "beattle-b@yandex.ru";
-        $mail = new Mail();
+    public function sendFile(){
+        $this->load->model('tool/upload');
+        $this->response->addHeader('Content-Type: application/json');
 
-        $mail->protocol = $this->config->get('config_mail_protocol');
-        $mail->parameter = $this->config->get('config_mail_parameter');
-        $mail->hostname = $this->config->get('config_smtp_host');
-        $mail->username = $this->config->get('config_smtp_username');
-        $mail->password = $this->config->get('config_smtp_password');
-        $mail->port = $this->config->get('config_smtp_port');
-        $mail->timeout = $this->config->get('config_smtp_timeout');
-        $mail->setTo($email_to);
-        $mail->setFrom("hipno@oc-project.ru");
-        $mail->setSender("somewhere@example.com");
-        $mail->setSubject("test send mail");
-        $mail->setText("test message body text");
-        // $mail->addAttachment($clientData);
+        $info = json_decode(file_get_contents("php://input"));
+        $json['message'] = 'файл загружен';
 
-        $mail->send();
+        $upload = $this->model_tool_upload->getUploadByCode($info->client_file);
 
 
-	}
+        if (($this->request->server['REQUEST_METHOD'] == 'POST') ) {
+
+            $mail = new Mail($this->config->get('config_mail'));
+            $mail->setTo($this->config->get('config_email'));
+            $mail->setFrom($info->email);
+            $mail->setSender($info->name);
+            $mail->setSubject('Отправка файла');
+
+            $mail->setText(
+                'Имя:'.$info->name.PHP_EOL.
+                'Фамилия:'.$info->last_name.PHP_EOL.
+                'Почта:'.$info->email.PHP_EOL
+                .'Телефон'.$info->phone.PHP_EOL
+                .'Имя загрузки:'.$upload['name'].PHP_EOL
+
+            );
+
+            $mail->send();
+
+
+            $json['message'] = 'Файл отправлен';
+        }
+
+        $this->response->setOutput(json_encode($json));
+
+    }
 }

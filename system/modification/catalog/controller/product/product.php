@@ -309,6 +309,12 @@ class ControllerProductProduct extends Controller {
 				$data['price'] = false;
 			}
 
+			$restrictCat =  array(33,31,28,32);
+            if(in_array($category_id,$restrictCat) && $this->customer->getGroupId() != 2 ){
+                $data['price'] = false;
+
+            }
+
 			if ((float)$product_info['special']) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
 			} else {

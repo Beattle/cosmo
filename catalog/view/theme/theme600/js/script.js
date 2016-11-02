@@ -531,4 +531,22 @@ function recaptchaCallback() {
     $('.sendBtn').removeAttr('disabled');
 }
 
+function sendMail(data) {
+    $.ajax({
+        url:'index.php?route=account/edit/sendFile',
+        type: 'post',
+        data: JSON.stringify(data),
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function (json) {
+            alert(json.message);
+
+        },
+        error:function (data) {
+            console.log(data)
+        }
+    })
+}
+
 

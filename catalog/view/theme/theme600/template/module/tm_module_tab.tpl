@@ -152,10 +152,10 @@
                                             <?php } ?>
                                         </div>
                                         <?php } ?>
-                                        <div class="name">
+                                        <div class="description">
                                             <?php echo $product['name']; ?>
                                         </div>
-                                        <div class="description">
+                                        <div class="name">
                                         <a href="<?php echo $product['href']; ?>">
                                             <?php echo $product['description']; ?>
                                         </a>
@@ -179,12 +179,12 @@
                                                     onclick="cart.add('<?php echo $product['product_id']; ?>');">
                                                     <i class="fa fa-shopping-cart"></i>
                                                 </button>
-                                                <a class="toggle_btn">More</a>
+                                                <a class="toggle_btn"><button class="product-btn" type="button" data-toggle="tooltip"
+                                                                              title="<?php echo $button_wishlist; ?>"
+                                                                              onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
+                                                            class="fa fa-heart"></i></button></a>
                                                 <div class="toggle_cnt">
-                                                    <button class="product-btn" type="button" data-toggle="tooltip"
-                                                    title="<?php echo $button_wishlist; ?>"
-                                                    onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
-                                                    class="fa fa-heart"></i></button>
+
                                                     <button class="product-btn" type="button" data-toggle="tooltip"
                                                     title="<?php echo $button_compare; ?>"
                                                     onclick="compare.add('<?php echo $product['product_id']; ?>');"><i
@@ -296,12 +296,12 @@
                             <?php } ?>
                         </div>
                         <?php } ?>
-                                            <div class="name">
+                                            <div class="description">
                                                 
                                                     <?php echo $product['name']; ?>
                                                 
                                             </div>
-                                    <div class="description">
+                                    <div class="name">
                                     <a href="<?php echo $product['href']; ?>">
 							<?php echo $product['description']; ?>
                             </a>
@@ -327,12 +327,12 @@
                             onclick="cart.add('<?php echo $product['product_id']; ?>');">
                             <i class="fa fa-shopping-cart"></i>
                         </button>
-                        <a class="toggle_btn">More</a>
+                        <a class="toggle_btn"><button class="product-btn" type="button" data-toggle="tooltip"
+                                                      title="<?php echo $button_wishlist; ?>"
+                                                      onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
+                                    class="fa fa-heart"></i></button></a>
                         <div class="toggle_cnt">
-                            <button class="product-btn" type="button" data-toggle="tooltip"
-                            title="<?php echo $button_wishlist; ?>"
-                            onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
-                            class="fa fa-heart"></i></button>
+
                             <button class="product-btn" type="button" data-toggle="tooltip"
                             title="<?php echo $button_compare; ?>"
                             onclick="compare.add('<?php echo $product['product_id']; ?>');"><i
@@ -472,12 +472,12 @@
                             <?php } ?>
                         </div>
                         <?php } ?>
-                                <div class="name">
+                                <div class="description">
                                     
                                         <?php echo $product['name']; ?>
                                     
                                 </div>
-                                    <div class="description">
+                                    <div class="name">
                                     <a href="<?php echo $product['href']; ?>">
 							<?php echo $product['description']; ?>
                             </a>
@@ -505,12 +505,12 @@
 
                             <i class="fa fa-shopping-cart"></i>
                         </button>
-                        <a class="toggle_btn">More</a>
+                        <a class="toggle_btn"><button class="product-btn" type="button" data-toggle="tooltip"
+                                                      title="<?php echo $button_wishlist; ?>"
+                                                      onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
+                                    class="fa fa-heart"></i></button></a>
                         <div class="toggle_cnt">
-                            <button class="product-btn" type="button" data-toggle="tooltip"
-                            title="<?php echo $button_wishlist; ?>"
-                            onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
-                            class="fa fa-heart"></i></button>
+
                             <button class="product-btn" type="button" data-toggle="tooltip"
                             title="<?php echo $button_compare; ?>"
                             onclick="compare.add('<?php echo $product['product_id']; ?>');"><i
@@ -649,12 +649,12 @@
                             <?php } ?>
                         </div>
                         <?php } ?>
-                            <div class="name">
+                            <div class="description">
                                 
                                     <?php echo $product['name']; ?>
                                 
                             </div>
-                                    <div class="description">
+                                    <div class="name">
                                     <a href="<?php echo $product['href']; ?>">
 							<?php echo $product['description']; ?>
                             </a>
@@ -682,12 +682,12 @@
 
                             <i class="fa fa-shopping-cart"></i>
                         </button>
-                        <a class="toggle_btn">More</a>
+                        <a class="toggle_btn">                            <button class="product-btn" type="button" data-toggle="tooltip"
+                                                                                  title="<?php echo $button_wishlist; ?>"
+                                                                                  onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
+                                    class="fa fa-heart"></i></button></a>
                         <div class="toggle_cnt">
-                            <button class="product-btn" type="button" data-toggle="tooltip"
-                            title="<?php echo $button_wishlist; ?>"
-                            onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i
-                            class="fa fa-heart"></i></button>
+
                             <button class="product-btn" type="button" data-toggle="tooltip"
                             title="<?php echo $button_compare; ?>"
                             onclick="compare.add('<?php echo $product['product_id']; ?>');"><i

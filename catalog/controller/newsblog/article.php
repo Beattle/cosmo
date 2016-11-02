@@ -414,6 +414,7 @@ class ControllerNewsBlogArticle extends Controller {
                     'Имя:'.$this->request->post['name'].PHP_EOL.
                     'Телефон:'.$this->request->post['phone'].PHP_EOL.
                     'Почта:'.$this->request->post['email'].PHP_EOL.
+                    'Дата:'.$this->request->post['data'].PHP_EOL.
                     'Сообщение:'.$this->request->post['name'].strip_tags($this->request->post['enquiry'])
                 );
                 $mail->send();

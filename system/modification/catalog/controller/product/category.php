@@ -195,6 +195,13 @@ class ControllerProductCategory extends Controller {
 					$price = false;
 				}
 
+                $noDefaultPrice = array(33,31,28,32);
+
+                if(in_array($category_id,$noDefaultPrice) && $this->customer->getGroupId() == 1 ){
+                    $price = false;
+
+                }
+
 				if ((float)$result['special']) {
 					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
 				} else {

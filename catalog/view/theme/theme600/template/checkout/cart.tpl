@@ -34,6 +34,9 @@
 		&nbsp;(<?php echo $weight; ?>)
 		<?php } ?>
 	  </h1>
+       <p class="text-center">Минимальный заказ от 10 000</p>
+
+
 	  <form class="shoping_cart" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
 		<div class="table-responsive">
 		  <table class="table table-bordered">

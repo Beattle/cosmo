@@ -280,10 +280,14 @@ $('button[id^=\'button-custom-field\']').on('click', function() {
 					}
 								
 					if (json['success']) {
-						alert(json['success']);
+						// alert(json['success']);
 
 						client_data['name'] = $('#input-firstname').val();
                         client_data['last_name'] = $('#input-lastname').val();
+                        client_data['client_file'] = json['code'];
+                        client_data['email'] = $('#input-email').val();
+
+
                         sendMail(client_data);
 						$(node).parent().find('input').attr('value', json['code']);
 
@@ -311,28 +315,5 @@ $('.time').datetimepicker({
 	pickDate: false
 });
 
-    function sendMail(data) {
-        $.ajax({
-            url:'index.php?route=account/edit/sendFile',
-            type: 'post',
-            dataType: 'json',
-            data: data,
-            cache: false,
-            contentType: false,
-            processData: false,
-            beforeSend: function() {
-
-            },
-            complete: function() {
-
-            },
-            success:function () {
-                
-            },
-            error:function () {
-                
-            }
-        })
-    }
 //--></script> 
 <?php echo $footer; ?>
