@@ -125,6 +125,9 @@ $data['text_newsblog'] = $this->language->get('text_newsblog');$data['text_newsb
 			
 		$data['attribute_group'] = $this->url->link('catalog/attribute_group', 'token=' . $this->session->data['token'], 'SSL');
 		$data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
+
+			$data['backup_pro'] = $this->url->link('tool/backup_pro', 'token=' . $this->session->data['token'], 'SSL');
+			
 		$data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');
 		$data['category'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
 		$data['country'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'], 'SSL');

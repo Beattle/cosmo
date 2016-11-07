@@ -216,4 +216,6 @@ class ControllerAccountEdit extends Controller {
 
 		return !$this->error;
 	}
+
+
 }

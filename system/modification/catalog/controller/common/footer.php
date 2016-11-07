@@ -56,7 +56,10 @@ class ControllerCommonFooter extends Controller {
 		$data['account'] = $this->url->link('account/account', '', 'SSL');
 		$data['order'] = $this->url->link('account/order', '', 'SSL');
 		$data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
-		$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+		 $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+			$data['yandex_metrika'] = $this->config->get('ya_metrika_code') ? html_entity_decode($this->config->get('ya_metrika_code'), ENT_QUOTES, 'UTF-8') : '';
+			$data['ya_metrika_active'] = $this->config->get('ya_metrika_active') ? true : false;
+			
 
 			$data['footer_top'] = $this->load->controller('common/footer_top');
 			

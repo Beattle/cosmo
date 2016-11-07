@@ -1,6 +1,48 @@
 <?php
 class ControllerCommonHeader extends Controller {
 	public function index() {
+
+			if (!isset($this->session->data['backup_scheduled_date'])) {
+				$backup_scheduled_date = $this->config->get('backup_scheduled_date');
+				if ($backup_scheduled_date && $this->config->get('backup_scheduled_status') == 1 && $this->config->get('backup_scheduled_cron') == 0) {
+					$this->session->data['backup_scheduled_date'] = $this->config->get('backup_scheduled_date');
+				} else {
+					$this->session->data['backup_scheduled_date'] = false;
+				}
+			}
+			
+			if ($this->session->data['backup_scheduled_date'] !== false) {
+				if (date('Y-m-d') >= $this->session->data['backup_scheduled_date']) {
+					$frequency = $this->config->get('backup_scheduled_frequency');
+					if ($frequency == 'Daily') {
+						$new_date = date('Y-m-d', strtotime(date('Y-m-d H:i:s') . ' + 1 day'));
+					} elseif ($frequency == 'Weekly') {
+						$new_date = date('Y-m-d', strtotime(date('Y-m-d H:i:s') . ' + 1 week'));
+					} else {
+						$new_date = date('Y-m-d', strtotime(date('Y-m-d H:i:s') . ' + 1 month'));
+					}
+					$this->load->model('tool/backup_pro');
+					$this->model_tool_backup_pro->reset_next_backup($new_date);
+					$this->session->data['backup_scheduled_date'] = $new_date;
+					
+					$url = HTTPS_SERVER . 'index.php?route=tool/backup_pro';
+
+					//step1
+					$cSession = curl_init();
+
+					//step2
+					curl_setopt($cSession,CURLOPT_URL,$url);
+					curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
+					curl_setopt($cSession,CURLOPT_HEADER, false);
+
+					//step3
+					$result=curl_exec($cSession);
+
+					//step4
+					curl_close($cSession);	
+				}
+			}
+			
 		$data['title'] = $this->document->getTitle();
 
 		if ($this->request->server['HTTPS']) {

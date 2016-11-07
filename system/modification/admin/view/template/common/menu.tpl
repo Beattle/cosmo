@@ -172,6 +172,9 @@
     <ul>
       <li><a href="<?php echo $upload; ?>"><?php echo $text_upload; ?></a></li>
       <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+
+         <li><a href="<?php echo $backup_pro; ?>">Backup PRO</a></li>
+			
       <li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>
     </ul>
   </li>
